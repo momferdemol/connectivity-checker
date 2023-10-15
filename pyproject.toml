@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "connectivity-checker"
+description = "URL Connectivity Checker"
+version = "0.0.1"
+authors = ["Momfer"]
+
+
+[tool.poetry.dependencies]
+python = "~=3.10"
+aiohttp = "^3.8.6"
+
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "venv/",
+    ".venv/"
+]
+
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+# E & F - defaults
+# W     - optional warnings (for example trailing whitespace)
+# C90   - code complexity
+# ANN   - enforce strict type annotation
+# G     - should not have f-strings in logs
+select = ["E", "F", "W", "C90", "ANN", "G"]
+logger-objects = ["logger.log"] # <- Change path to logger object
+line-length = 100
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    ".venv",
+]

@@ -1,0 +1,8 @@
+www.google.com
+www.nu.nl
+www.nos.nl
+www.rtlnieuws.nl
+www.hartvannederland.nl
+www.shownieuws.nl
+docs.python.org
+pypi.org
