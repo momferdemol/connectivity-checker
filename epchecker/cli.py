@@ -1,11 +1,12 @@
 # epchecker/cli.py
 
 import argparse
+from typing import Any
 
 from epchecker.logger import log
 
 
-def read_user_cli_args():
+def read_user_cli_args() -> Any:
     """Handle the CLI arguments and options."""
 
     parser = argparse.ArgumentParser(
@@ -28,10 +29,17 @@ def read_user_cli_args():
         default="",
         help="Read URLs from a file",
     )
+    parser.add_argument(
+        "-a",
+        "--asynchronous",
+        action="store_true",
+        help="Run the connectivity check asynchronously",
+    )
+
     return parser.parse_args()
 
 
-def display_check_result(result: bool, url: str, error: str):
+def display_check_result(result: bool, url: str, error: str) -> None:
     """Display the result of a connectivity check."""
 
     if result:
